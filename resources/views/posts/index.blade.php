@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $post['judul'] }}</h5>
                     <p class="card-text">{{ substr($post['isi'], 0, 200) }}...</p>
-                    <a href="#" class="btn btn-warning">Selengkapnya</a>
+                    <a href="{{ route('post.detail', $post->id) }}" class="btn btn-warning">Selengkapnya</a>
                 </div>
             </div>
         @endforeach
