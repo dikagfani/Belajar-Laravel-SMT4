@@ -6,14 +6,23 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index() {
-        // $name = 'Ardika';
-        // $email = 'ardikajambi@gmail.com';
-        $data = [
-            'title' => 'SI UNJA',
-            'name' => 'ARDIKA',
-            'email' => 'ardikakeren@gmail.com'
-        ];
-        return view('home', compact('data'));
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
 }
